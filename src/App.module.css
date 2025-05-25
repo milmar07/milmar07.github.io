@@ -1,0 +1,179 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-accent: #6366f1;
+  --color-bg-dark: #121212;
+  --color-text-dark: #eaeaea;
+  --color-accent-dark: #818cf8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+.dark {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+  --color-accent: var(--color-accent-dark);
+  --glass-bg: rgba(18, 18, 18, 0.5);
+}
+
+.container {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  transition: background-color 0.4s, color 0.4s;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.toggleTopRight {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 10;
+  border: none;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+.toggleTopRight:hover {
+  background: #4f46e5;
+}
+
+.backdrop {
+  max-width: 960px;
+  margin: auto;
+  background: var(--glass-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.socialLinks a {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  transition: transform 0.3s;
+}
+
+.socialLinks a:hover {
+  transform: translateY(-2px);
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--color-accent);
+  padding-left: 0.75rem;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--glass-bg);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(200, 200, 200, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.card p {
+  margin: 0.25rem 0;
+  opacity: 0.9;
+}
+
+.card small {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.card a {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: transform 0.2s;
+}
+
+.card a:hover {
+  transform: scale(1.15);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.experience ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  opacity: 0.6;
+  margin-top: 4rem;
+}
