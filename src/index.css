@@ -1,21 +1,17 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  transition: background-color 0.4s ease, color 0.4s ease;
+:root {
+  --color-bg: #121212;
+  --color-text: #eaeaea;
+  --color-accent: #6366f1;
+  --color-accent-dark: #818cf8;
+  --color-text-dark: #eaeaea;
 }
 
-:root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-accent: #6366f1;
-  --color-bg-dark: #121212;
-  --color-text-dark: #eaeaea;
-  --color-accent-dark: #818cf8;
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .dark {
@@ -41,3 +37,4 @@ ul {
 button {
   font-family: inherit;
 }
+

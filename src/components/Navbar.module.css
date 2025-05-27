@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(18, 18, 18, 0.85);
+  padding: 1rem 2rem;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--color-accent-dark);
+}
+
+.loginBtn {
+  padding: 0.4rem 1rem;
+  background: var(--color-accent-dark);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.loginBtn:hover {
+  background: #4f46e5;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  background: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.dropdownMenu li {
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.dropdownMenu li:hover {
+  background: #333;
+}
