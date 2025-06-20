@@ -1,0 +1,92 @@
+.timelineWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.timeline {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 80px;
+}
+
+.skillIcon {
+  width: 50px;
+  height: 50px;
+  opacity: 0.4;
+  transition: transform 0.3s, opacity 0.3s;
+  filter: grayscale(100%);
+}
+
+.skillIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skillIcon.active {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: none;
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.stories {
+  flex: 1;
+  min-width: 280px;
+}
+
+.company {
+  margin-top: 4rem;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.skillBlock {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skillBlock h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.skillBlock p {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/* 🎯 Responsive tweaks */
+@media (max-width: 768px) {
+  .timelineWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline {
+    flex-direction: row;
+    position: relative;
+    top: auto;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .skillIcon {
+    margin: 0.5rem;
+  }
+
+  .stories {
+    width: 100%;
+  }
+}
