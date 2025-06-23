@@ -1,6 +1,6 @@
 .scrollContainer {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -9,6 +9,9 @@
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
 }
+
+
+
 
 @keyframes fadeInUp {
   from {

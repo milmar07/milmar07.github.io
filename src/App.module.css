@@ -202,10 +202,15 @@ footer {
 }
 
 .heroSection {
-  position: relative;
-  height: 100vh;
+  height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+  transform: translateY(-5vh); /* Lifts the whole hero section up slightly */
 }
+
+

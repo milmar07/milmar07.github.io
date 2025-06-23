@@ -2,75 +2,98 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(18, 18, 18, 0.85);
-  padding: 1rem 2rem;
+  background: rgba(18, 18, 18, 0.95);
+  padding: 0.5rem 1.5rem;     /* reduced vertical and horizontal padding */
   font-family: 'Inter', sans-serif;
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 999;
+  height: 64px;               /* fixed height for consistent sizing */
 }
 
+
 .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
+
 
 .navLinks {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
   margin: 0;
   padding: 0;
 }
 
 .navLinks a {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
-  color: var(--color-text-dark);
-  font-weight: 500;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 
-.navLinks a:hover {
-  color: var(--color-accent-dark);
+.navLinks a:hover,
+.navLinks a:focus {
+  color: #45ec7b; /* green accent on hover */
 }
 
 .loginBtn {
-  padding: 0.4rem 1rem;
-  background: var(--color-accent-dark);
-  color: white;
+  padding: 0.45rem 1.2rem;
+  font-weight: 600;
+  background-color: #45ec7b;
+  color: black;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .loginBtn:hover {
-  background: #4f46e5;
+  background-color: #34c96a;
 }
 
 .dropdown {
   position: relative;
 }
 
+.dropdown span {
+  cursor: pointer;
+}
+
 .dropdownMenu {
   position: absolute;
   top: 2.2rem;
   left: 0;
-  background: #1e1e1e;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
   overflow: hidden;
   z-index: 100;
 }
 
 .dropdownMenu li {
-  padding: 0.5rem 1rem;
-  color: white;
+  padding: 0.6rem 1.2rem;
+  white-space: nowrap;
 }
 
 .dropdownMenu li:hover {
-  background: #333;
+  background-color: #3a3a3a;
+}
+
+.dropdownMenu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logoImage {
+  height: 240px;           /* or try 56px if you want it bigger */
+  object-fit: contain;
+  display: block;
 }
