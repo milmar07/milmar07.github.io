@@ -15,7 +15,7 @@ export default function App() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <main>
+      <main className={styles.mainContent}>
           <AboutMe />
           <SectionDivider />
           <Timeline />

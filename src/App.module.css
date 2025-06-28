@@ -8,13 +8,14 @@
 }
 
 .container {
-  background-color: var(--color-bg-dark);
+  background-color: /*var(--color-bg-dark); */  transparent; /* Use transparent to allow background effects */
   /*color: var(--color-text);*/
   min-height: 100vh;
   transition: background-color 0.4s, color 0.4s;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   line-height: 1.6;
   position: relative;
+  z-index: 2;
 }
 
 .toggleTopRight {
@@ -36,4 +37,16 @@
 .toggleTopRight:hover {
   background: #34c96a;
 }
+
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: var(--color-bg); /* keep central area clean */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 
