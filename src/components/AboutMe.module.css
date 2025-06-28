@@ -1,0 +1,125 @@
+.heroSection {
+  scroll-snap-align: start;
+}
+
+.experienceSection {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.timelineSection {
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  padding-top: 2rem;
+}
+
+.aboutSectionGrid {
+  display: flex;
+  align-items: flex-start;           /* keep items aligned to top */
+  justify-content: space-between;    /* space items nicely on larger screens */
+  max-width: 1200px;                 /* center and limit overall width */
+  margin: 0 auto;                    /* center horizontally */
+  padding: 8rem 5vw 6rem;            /* generous vertical space */
+  gap: 4rem;                         /* spacing between text/image */
+  flex-wrap: wrap;                   /* stack on smaller screens */
+  min-height: auto;                  /* let content height define section height */
+}
+
+
+
+.leftContent {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;  /* Controls vertical spacing between text blocks */
+}
+
+
+.rightImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightImage img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.welcomeText {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.leftContent h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  line-height: 1.15;
+}
+
+.typedText {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0.25rem 0 1rem;
+  color: var(--color-text-dark);
+  max-width: 520px;
+  opacity: 0.9;
+}
+
+
+.typingWrapper {
+  min-height: 2.2rem;
+}
+
+.green {
+  color: var(--color-accent);
+}
+
+.socialLabel {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.socialLinks a {
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  transition: transform 0.3s;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.2);
+}

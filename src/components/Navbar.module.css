@@ -2,23 +2,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(18, 18, 18, 0.95);
-  padding: 0.5rem 1.5rem;     /* reduced vertical and horizontal padding */
+  background: rgba(18, 18, 18, 0.9);
+  padding: 0.75rem 2rem;
   font-family: 'Inter', sans-serif;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 999;
-  height: 64px;               /* fixed height for consistent sizing */
+  height: 72px;
+  transition: border-bottom 0.3s ease, box-shadow 0.3s ease;
 }
 
+.scrolled {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* If you prefer a subtle shadow instead of border, use this:
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  */
+}
 
+/* Rest of your existing CSS below... */
 .logo {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
+.logoImage {
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
 
 .navLinks {
   list-style: none;
@@ -30,26 +43,43 @@
 }
 
 .navLinks a {
+  position: relative;
   color: white;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   transition: color 0.3s ease;
+}
+
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #45ec7b;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after,
+.navLinks a:focus::after {
+  width: 100%;
 }
 
 .navLinks a:hover,
 .navLinks a:focus {
-  color: #45ec7b; /* green accent on hover */
+  color: #45ec7b;
 }
 
 .loginBtn {
-  padding: 0.45rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   font-weight: 600;
   background-color: #45ec7b;
   color: black;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -58,42 +88,10 @@
   background-color: #34c96a;
 }
 
-.dropdown {
-  position: relative;
+.activeLink {
+  color: #45ec7b;
 }
 
-.dropdown span {
-  cursor: pointer;
-}
-
-.dropdownMenu {
-  position: absolute;
-  top: 2.2rem;
-  left: 0;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  overflow: hidden;
-  z-index: 100;
-}
-
-.dropdownMenu li {
-  padding: 0.6rem 1.2rem;
-  white-space: nowrap;
-}
-
-.dropdownMenu li:hover {
-  background-color: #3a3a3a;
-}
-
-.dropdownMenu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.logoImage {
-  height: 240px;           /* or try 56px if you want it bigger */
-  object-fit: contain;
-  display: block;
+.activeLink::after {
+  width: 100%;
 }

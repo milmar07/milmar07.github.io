@@ -1,0 +1,8 @@
+.divider {
+  border: none;
+  height: 1px;
+  background: rgba(69, 236, 123, 0.1); /* barely visible green matching #45ec7b */
+  margin: 6rem auto;                   /* vertical spacing before & after the line */
+  width: 90%;                          /* line doesn't reach full page width */
+  max-width: 1100px;                   /* keeps it nice on large screens */
+}

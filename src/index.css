@@ -1,8 +1,8 @@
 :root {
   --color-bg: #121212;
   --color-text: #eaeaea;
-  --color-accent: #6366f1;
-  --color-accent-dark: #818cf8;
+  --color-accent: #45ec7b;
+  --color-accent-dark: #45ec7b;
   --color-text-dark: #eaeaea;
 }
 
@@ -38,3 +38,6 @@ button {
   font-family: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}

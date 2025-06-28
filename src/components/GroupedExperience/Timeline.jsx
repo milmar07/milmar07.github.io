@@ -1,87 +1,46 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import styles from "./Timeline.module.css";
 import { experienceGroups } from "./experienceData";
-import { motion, useInView } from "framer-motion";
 
 export default function Timeline() {
-  const sectionRefs = useRef({});
-  const [activeSkill, setActiveSkill] = useState(null);
+  const [activeSkill, setActiveSkill] = useState(experienceGroups[0].skills[0]);
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const skillEntries = Object.entries(sectionRefs.current);
+  const allSkills = experienceGroups.flatMap(group =>
+    group.skills.map(skill => ({ ...skill, company: group.company }))
+  );
 
-    for (let [id, el] of skillEntries) {
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY;
-        if (scrollTop >= top - 200) {
-          setActiveSkill(id);
-        }
-      }
-    }
+  const handleNav = (dir) => {
+    const idx = allSkills.findIndex(s => s.id === activeSkill.id);
+    const next = (dir === "next") 
+      ? allSkills[(idx + 1) % allSkills.length]
+      : allSkills[(idx - 1 + allSkills.length) % allSkills.length];
+    setActiveSkill(next);
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // trigger once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id) => {
-  const el = sectionRefs.current[id];
-  if (el) {
-    const yOffset = -80; // Adjust this to match navbar height
-    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
-};
-
-
 
   return (
     <div className={styles.timelineWrapper}>
-      <div className={styles.timeline}>
-        {experienceGroups.flatMap(group =>
-          group.skills.map(skill => (
-            <div
-              key={skill.id}
-              className={`${styles.skillIcon} ${activeSkill === skill.id ? styles.active : ""}`}
-              onClick={() => scrollToSection(skill.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <img src={skill.icon} alt={skill.label} />
-            </div>
-          ))
-        )}
-      </div>
-
-      <div className={styles.stories}>
-        {experienceGroups.map((group) => (
-          <div key={group.company}>
-            <div className={styles.company}>{group.company}</div>
-            {group.skills.map((skill) => {
-              const ref = useRef(null);
-              const inView = useInView(ref, { once: true, margin: "-100px 0px" });
-
-              return (
-                <motion.div
-                  key={skill.id}
-                  ref={(el) => {
-                    ref.current = el;
-                    sectionRefs.current[skill.id] = el;
-                  }}
-                  className={styles.skillBlock}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <h3>{skill.label}</h3>
-                  <p>{skill.story}</p>
-                </motion.div>
-              );
-            })}
+      <div className={styles.iconRow}>
+        {allSkills.map(skill => (
+          <div
+            key={skill.id}
+            className={`${styles.skillIcon} ${activeSkill.id === skill.id ? styles.active : ""}`}
+            onClick={() => setActiveSkill(skill)}
+          >
+            <img src={skill.icon} alt={skill.label} />
           </div>
         ))}
+      </div>
+
+      <div className={styles.detailBox}>
+        <button onClick={() => handleNav("prev")} className={styles.navBtn}>←</button>
+
+        <div className={styles.cardContent}>
+          <h3>{activeSkill.label}</h3>
+          <p className={styles.company}>{activeSkill.company}</p>
+          <p>{activeSkill.story}</p>
+        </div>
+
+        <button onClick={() => handleNav("next")} className={styles.navBtn}>→</button>
       </div>
     </div>
   );
